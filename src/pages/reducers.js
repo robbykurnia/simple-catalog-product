@@ -1,25 +1,25 @@
-import { combineReducers } from 'redux'
-import * as types from './types'
+import { combineReducers } from 'redux';
+import * as types from '../redux/types';
 
 // COUNTER REDUCER
 const counterReducer = (state = 0, { type }) => {
   switch (type) {
     case types.INCREMENT:
-      return state + 1
+      return state + 1;
     case types.DECREMENT:
-      return state - 1
+      return state - 1;
     case types.RESET:
-      return 0
+      return 0;
     default:
-      return state
+      return state;
   }
-}
+};
 
 // INITIAL TIMER STATE
 const initialTimerState = {
   lastUpdate: 0,
-  light: false,
-}
+  light: false
+};
 
 // TIMER REDUCER
 const timerReducer = (state = initialTimerState, { type, payload }) => {
@@ -27,17 +27,17 @@ const timerReducer = (state = initialTimerState, { type, payload }) => {
     case types.TICK:
       return {
         lastUpdate: payload.ts,
-        light: !!payload.light,
-      }
+        light: !!payload.light
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 // COMBINED REDUCERS
 const reducers = {
   counter: counterReducer,
-  timer: timerReducer,
-}
+  timer: timerReducer
+};
 
-export default combineReducers(reducers)
+export default combineReducers(reducers);
