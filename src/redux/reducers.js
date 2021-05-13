@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import * as types from '../redux/types';
+import * as types from './types';
 
 // COUNTER REDUCER
 const counterReducer = (state = 0, { type }) => {

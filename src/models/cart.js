@@ -16,5 +16,18 @@ export default class cartAPI {
       url: `${API_URL}/sales/api/cart/0/`
     });
   }
+
+  static putCart(data) {
+    return axios({
+      method: 'put',
+      data,
+      headers: {
+        "X-API-Key": `${API_KEY}`,
+        "Authorization": `jwt ${cookies.get('token')}`,
+        "Content-Type": "application/json"
+      },
+      url: `${API_URL}/sales/api/cart/0/`
+    });
+  }
 }
 

@@ -33,7 +33,17 @@
     "react": {
       "version": "detect"
     },
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "webpack": {
+        "config": {
+          "resolve": {
+            "modules": [
+              "./src/"
+            ]
+          }
+        }
+      }
+    }
   },
   "plugins": [
     "react",
@@ -63,6 +73,7 @@
     "react/no-array-index-key": 0,
     "react/jsx-props-no-spreading": 0,
     "react/display-name": 1,
+    "react-hooks/exhaustive-deps": 0,
     "comma-dangle": [
       "error",
       "never"
